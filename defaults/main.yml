@@ -1,0 +1,75 @@
+---
+# SSH Server (sshd) config
+# see https://linux.die.net/man/5/sshd_config
+
+# Path to our sshd config file
+sshd_config_file: /etc/ssh/sshd_config
+
+################
+## Networking ##
+################
+
+# Configure TCP listen port(s) sshd should listen on
+sshd_listen_ports: ["22"]
+
+# Configure AddressFamily sshd should listen on
+# Defaults to any, you should configure this as needed
+sshd_address_family: "any"
+
+# Configure the IP address(es) sshd should listen on
+# Defaults to all interfaces, ideally you should set this to the networks you actually want it to listen on
+sshd_listen_addresses: [0.0.0.0]
+
+# Configure syslog facility identifier
+sshd_syslog_facility: "AUTH"
+
+# Configure logging level
+sshd_log_level: "INFO"
+
+####################
+## Authentication ##
+####################
+
+# Configure root login
+sshd_permit_root_login: "no"
+
+# Configure login grace time before sshd auto-disconnects
+# If the value is 0, there is no time limit. The default is 120 seconds.
+sshd_login_grace_time: 60
+
+# Configure max authentication retries per connection
+# Specifies the maximum number of authentication attempts permitted per connection.
+# Once the number of failures reaches half this value, additional failures are logged. The default is 6.
+sshd_max_auth_retries: 2
+
+# Configure max sessions per connection
+# Specifies the maximum number of open sessions permitted per network connection. The default is 10.
+sshd_max_sessions: 5
+
+# Configure the maximum concurrent non-authenticated connections
+# Additional connections will be dropped until authentication succeeds or the LoginGraceTime expires for a connection.
+# The default is 10.
+sshd_max_startups: 10:30:60
+
+# Configure public key authentication
+sshd_allow_pubkey_auth: "yes"
+
+# Configure password authentication
+# Specifies whether password authentication is allowed. The default is "yes".
+sshd_allow_password_auth: "no"
+
+# Configured denied user(s) pattern
+sshd_deny_users: ""
+
+# Configured allowed user(s) pattern
+sshd_allow_users: ""
+
+# Configured denied group(s) pattern
+sshd_deny_groups: ""
+
+# Configured allowed group(s) pattern
+sshd_allow_groups: ""
+
+# Configure MOTD
+# Specifies whether sshd should print /etc/motd when a user logs in interactively. The default is "yes"
+sshd_print_motd: "yes"

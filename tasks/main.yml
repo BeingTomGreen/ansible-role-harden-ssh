@@ -1,0 +1,21 @@
+---
+- name: Configure sshd_config
+  ansible.builtin.template:
+    src: sshd.conf.j2
+    dest: "{{ sshd_config_file }}"
+    mode: "0600"
+    owner: "{{ ssh_owner }}"
+    group: "{{ ssh_group }}"
+    validate: "{{ sshd_path }} -T -C user=root -C host=localhost -C addr=localhost -C lport=22 -f %s"
+  notify: Restart sshd
+
+- name: Disable MOTD
+  community.general.pamd:
+    name: sshd
+    type: session
+    control: optional
+    module_path: pam_motd.so
+    state: absent
+    backup: true
+  when:
+    - not (sshd_print_motd | bool)

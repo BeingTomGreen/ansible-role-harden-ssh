@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Tom Green
+  description: Simple Ansible role to harden ssh.
+
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Ubuntu
+    - name: Debian
+
+  galaxy_tags:
+    - ssh
+    - sshd
+    - system
+    - security
+    - hardening
+
+dependencies: []

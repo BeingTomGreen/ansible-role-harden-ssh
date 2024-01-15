@@ -24,6 +24,11 @@ SyslogFacility {{ sshd_syslog_facility }}
 # Configure logging level
 LogLevel {{ sshd_log_level }}
 
+# Configure X11Forwarding
+X11Forwarding {{ 'yes' if (ssh_x11_forwarding|bool) else 'no' }}
+X11UseLocalhost yes
+
+
 ##  Authentication  ##
 
 # Configure root login

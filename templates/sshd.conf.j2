@@ -79,3 +79,9 @@ HostbasedAuthentication no
 
 # Configure MOTD
 PrintMotd {{ sshd_print_motd }}
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# override default of no subsystems
+Subsystem sftp /opt/app/openssh5/libexec/sftp-server

@@ -74,6 +74,9 @@ sshd_deny_groups: ""
 # Configured allowed group(s) pattern
 sshd_allow_groups: ""
 
+# PAM authentication
+sshd_use_pam: "yes"
+
 # Configure MOTD
 # Specifies whether sshd should print /etc/motd when a user logs in interactively. The default is "yes"
 sshd_print_motd: "yes"

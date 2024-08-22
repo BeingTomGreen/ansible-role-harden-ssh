@@ -76,6 +76,9 @@ IgnoreRhosts yes
 IgnoreUserKnownHosts yes
 HostbasedAuthentication no
 
+# PAM authentication
+UsePAM {{ sshd_use_pam }}
+
 # Configure MOTD
 PrintMotd {{ sshd_print_motd }}
 

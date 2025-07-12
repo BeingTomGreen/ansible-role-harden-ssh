@@ -1,38 +1,51 @@
-harden-ssh
-=========
+# beingtomgreen.harden_ssh
 
-Simple Ansible role to harden ssh.
+A simple Ansible role to harden ssh.
 
-Requirements
-------------
+## Installation
+
+Given that Galaxy seems to have abandoned roles, I suggest referencing this repository directly in your projects `requirements.yml`:
+
+```yml
+---
+
+roles:
+  - name: harden_ssh
+    src: https://github.com/BeingTomGreen/ansible-role-harden-ssh.git
+
+collections: []
+```
+
+You can then install the requirements as normal:
+
+```bash
+ansible-galaxy install -r requirements.yml
+```
+
+## Requirements
 
 None.
 
-Role Variables
---------------
+## Role Variables
 
-See [main.yml](defaults/main.yml).
+See [defaults/main.yml](defaults/main.yml) and [vars/main.yml](defaults/main.yml).
 
-Dependencies
-------------
+## Dependencies
 
 None.
 
-Example Playbook
-----------------
+## Example Playbook
 
 ```yml
 - hosts: all
   roles:
-    - BeingTomGreen.harden-ssh
+    - beingtomgreen.harden_ssh
 ```
 
-License
--------
+## License
 
-MIT
+[MIT](LICENSE)
 
-Author Information
-------------------
+## Author Information
 
-Tom Green
+[Tom Green](https://github.com/BeingTomGreen)

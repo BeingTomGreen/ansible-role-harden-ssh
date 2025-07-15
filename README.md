@@ -10,7 +10,7 @@ Given that Galaxy seems to have abandoned roles, I suggest referencing this repo
 ---
 
 roles:
-  - name: harden_ssh
+  - name: beingtomgreen.harden_ssh
     src: https://github.com/BeingTomGreen/ansible-role-harden-ssh.git
 
 collections: []

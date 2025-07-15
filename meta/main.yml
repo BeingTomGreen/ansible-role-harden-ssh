@@ -1,3 +1,5 @@
+---
+
 galaxy_info:
   author: Tom Green
   description: A simple ansible role to harden SSH.
